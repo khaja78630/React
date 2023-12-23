@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import Persons from './Persons';
 
+
+// Git repository : https://github.com/khaja78630
 export class List extends Component {
     constructor(props){
         super(props);
