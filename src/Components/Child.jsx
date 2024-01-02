@@ -8,6 +8,7 @@ export default class Child extends Component{
             empType: 'Contract'
         }
     }
+    
     render(){
         // console.log('props', this.props);
         // // Object destructering
