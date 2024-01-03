@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component , PureComponent} from 'react'
 import axios from 'axios';
 import B from './B';
 
@@ -10,7 +10,10 @@ export class A extends Component {
             name: 'Vinay',
             data: [],
             unmount : false,
-            interval : null
+            interval : null,
+            test : {
+                name : 'test'
+            }
         }
         console.log('From Construtor');
     }
@@ -78,8 +81,24 @@ export class A extends Component {
         //     clearInterval(this.state.interval);
         // }
     }
+
+    // updaing phase
+
+    shouldComponentUpdate(nextprops, nextstate){
+        console.log('From render A shouldComponentUpdate');
+        if(this.props.name !== nextprops.name){
+            return true;
+        } else {
+            return false;
+        }
+        
+    }
+    componentDidUpdate(){
+        console.log('From render A componentDidUpdate');
+        this.setState({name : 'test'})
+    }
     render() {
-        console.log('From render');
+        console.log('From render A');
         return (
             !this.state.unmount && <div> Name : {this.state.name} Posts
                 {
@@ -93,7 +112,8 @@ export class A extends Component {
                 }
                 <button onClick={this.loadPosts}>Load Posts</button>
                 <button onClick={this.unmount}>Unmount</button>
-                <B />
+                Name : {this.props.name}
+                {/* <B /> */}
 
             </div>
         )

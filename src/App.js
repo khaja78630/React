@@ -12,12 +12,15 @@ import Parent from './Lifecycle/Parent';
 
 // 
 
+import Accordian from "./Components/accordian/Accordian";
+
+
 function App() {
   // return <Stylesheet />
   // return <InlineStyleSheet />
 
   // return <CSSModule />
-  return <Parent />
+  return <Accordian />
 
   
   
