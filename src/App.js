@@ -12,7 +12,9 @@ import Parent from './Lifecycle/Parent';
 
 // 
 
-import Accordian from "./Components/accordian/Accordian";
+// import Accordian from "./Components/accordian/Accordian";
+// import Pure from './Components/PureComponent';
+import Func from './Components/Func';
 
 
 function App() {
@@ -20,7 +22,7 @@ function App() {
   // return <InlineStyleSheet />
 
   // return <CSSModule />
-  return <Accordian />
+  return <Func />
 
   
   
