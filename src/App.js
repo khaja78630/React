@@ -1,7 +1,7 @@
 
 import './App.css';
 import React from 'react'
-import Parent from './Lifecycle/Parent';
+// import Parent from './Lifecycle/Parent';
 // import Parent from './Components/Parent';
 // import Stylesheet from './Components/Stylesheet';
 // import InlineStyleSheet from './Components/InlineStyleSheet';
@@ -15,6 +15,11 @@ import Parent from './Lifecycle/Parent';
 // import Accordian from "./Components/accordian/Accordian";
 // import Pure from './Components/PureComponent';
 import Func from './Components/Func';
+import Header from './Components/Routing/Header';
+
+import { BrowserRouter as Router } from 'react-router-dom';
+import Routing from './Components/Routing/Routing';
+
 
 
 function App() {
@@ -22,10 +27,15 @@ function App() {
   // return <InlineStyleSheet />
 
   // return <CSSModule />
-  return <Func />
+  return (
+    <Router>
+      <div>
+        <Header />
+        <Routing />
+      </div>
+    </Router>)
 
-  
-  
+
 }
 
 export default App;

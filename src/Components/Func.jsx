@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 function Func() {
     const [name, setName] = useState('Vinay')
+    
     //componentdidmount
     useEffect(()=>{
         setTimeout(() => {
