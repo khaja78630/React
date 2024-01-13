@@ -12,7 +12,7 @@ import React from 'react'
 
 // 
 
-// import Accordian from "./Components/accordian/Accordian";
+import Accordian from "./Components/accordian/Accordian";
 // import Pure from './Components/PureComponent';
 import Func from './Components/Func';
 import Header from './Components/Routing/Header';
@@ -21,7 +21,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Routing from './Components/Routing/Routing';
 
 
-
+import { Outlet } from 'react-router-dom';
 function App() {
   // return <Stylesheet />
   // return <InlineStyleSheet />
@@ -33,7 +33,10 @@ function App() {
         <Header />
         <Routing />
       </div>
-    </Router>)
+    </Router>
+
+
+  )
 
 
 }

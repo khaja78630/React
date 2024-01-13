@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
 
 export class AboutUs extends Component {
-    componentDidMount(){
-        throw new Error("test error");
-    }
+   
   render() {
     return (
-      <div>AboutUs</div>
+      <div style={{padding : '1rem'}}>AboutUs</div>
     )
   }
 }

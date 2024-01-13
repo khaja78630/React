@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Routes } from 'react-router-dom'
 
 export class Home extends Component {
 
@@ -7,7 +8,7 @@ export class Home extends Component {
     }
   render() {
     return (
-      <div>Home</div>
+      <div style={{padding : '1rem'}}>Home</div>
     )
   }
 }
@@ -24,3 +25,22 @@ export default Home
 // memo - export defalut React.memo(MemoComponent)
 
 // componentdidcatch
+
+//routing
+
+// 1.nested Routes
+
+
+
+
+// hookes - useState, useeffect , useMemo, useCallback, usecontext, useReducer, custom hook
+
+// axios post, put , delete
+
+// redux
+// redux tool kit
+
+// node js, express js, monodb
+
+
+
