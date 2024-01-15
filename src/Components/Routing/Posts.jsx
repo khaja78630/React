@@ -77,7 +77,7 @@ function Posts() {
       <Link style={{display: 'block', textDecoration: 'none', padding: '10px'}} to={{pathname : `/posts/${post.id}`}}>{post.title}</Link>)
     })
     }
-    
+    <Outlet />
     </div>
   )
 }

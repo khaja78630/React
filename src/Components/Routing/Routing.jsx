@@ -16,13 +16,16 @@ export class Routing extends Component {
       <ErrorBoundary>
         <Routes>
 
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" element={<Home />}>
+
           <Route path="about" element={<AboutUs />}></Route>
           <Route path="contactus" element={<ContactUs />}></Route>
           <Route path="posts" element={<Posts />}>
-      
-          </Route>
           <Route path="posts/:postId" element={<PostDetails />}></Route> 
+          </Route>
+          </Route>
+          
+         
        
           <Route path="*" element={<PageNotFound />}></Route>
 

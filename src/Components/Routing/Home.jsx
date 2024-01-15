@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Routes } from 'react-router-dom'
+import { Outlet, Routes } from 'react-router-dom'
 
 export class Home extends Component {
 
@@ -8,7 +8,10 @@ export class Home extends Component {
     }
   render() {
     return (
-      <div style={{padding : '1rem'}}>Home</div>
+      <div style={{padding : '1rem'}}>Home
+      
+      <Outlet />
+      </div>
     )
   }
 }

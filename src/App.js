@@ -1,6 +1,6 @@
 
 import './App.css';
-import React from 'react'
+import React, {createContext, useEffect, useState} from 'react'
 // import Parent from './Lifecycle/Parent';
 // import Parent from './Components/Parent';
 // import Stylesheet from './Components/Stylesheet';
@@ -22,19 +22,45 @@ import Routing from './Components/Routing/Routing';
 
 
 import { Outlet } from 'react-router-dom';
+import Counter from './Components/context/Counter';
+
+import A from './Components/context/A';
+import UserContext from './Components/context/UserContext';
+import axios from 'axios';
+
+
+import B from './Components/context/A';
+import C from './Components/context/A';
+
 function App() {
   // return <Stylesheet />
   // return <InlineStyleSheet />
 
   // return <CSSModule />
-  return (
-    <Router>
-      <div>
-        <Header />
-        <Routing />
-      </div>
-    </Router>
+  const user = {name : 'Vinay'};
 
+  const [posts, setPosts] = useState()
+  const [count, setCount] = useState()
+
+  useEffect(() => {
+    axios.get('https://jsonplaceholder.typicode.com/posts').then(
+      (response) => setPosts(response.data)
+    )
+  },[])
+
+  return (
+    // <Router>
+    //   <div>
+    //     <Header />
+    //     <Routing />
+    //   </div>
+    // </Router>
+    <UserContext.Provider value={{posts: posts}}>
+
+      <A />
+      <B />
+      <C />
+    </UserContext.Provider>
 
   )
 
