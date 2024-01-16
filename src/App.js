@@ -41,6 +41,7 @@ function App() {
 
   const [posts, setPosts] = useState()
   const [count, setCount] = useState()
+  const [isLoggedin, setIsLoggedin] = useState(false);
 
   useEffect(() => {
     axios.get('https://jsonplaceholder.typicode.com/posts').then(
@@ -49,18 +50,18 @@ function App() {
   },[])
 
   return (
-    // <Router>
-    //   <div>
-    //     <Header />
-    //     <Routing />
-    //   </div>
-    // </Router>
-    <UserContext.Provider value={{posts: posts}}>
+    <Router>
+      <div>
+        <Header />
+        <Routing isLoggedin={isLoggedin} setIsLoggedin={setIsLoggedin}/>
+      </div>
+    </Router>
+    // <UserContext.Provider value={{posts: posts}}>
 
-      <A />
-      <B />
-      <C />
-    </UserContext.Provider>
+    //   <A />
+    //   <B />
+    //   <C />
+    // </UserContext.Provider>
 
   )
 

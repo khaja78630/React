@@ -13,7 +13,7 @@ function Posts() {
 
       response => {
 
-        setPosts(response.data)
+        setPosts(response.data);
       })
   }, [])
 

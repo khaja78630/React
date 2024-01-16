@@ -9,30 +9,37 @@ import Posts from './Posts';
 import ErrorBoundary from '../ErrorBoundary';
 
 import PostDetails from './PostDetails';
+import ProtectedRoute from './ProtectedRoute';
+import Login from './Login';
 
-export class Routing extends Component {
-  render() {
+
+
+function Routing(props) {
+  
     return (
       <ErrorBoundary>
         <Routes>
 
           <Route path="/" element={<Home />}>
 
+
+          </Route>
           <Route path="about" element={<AboutUs />}></Route>
           <Route path="contactus" element={<ContactUs />}></Route>
-          <Route path="posts" element={<Posts />}>
-          <Route path="posts/:postId" element={<PostDetails />}></Route> 
-          </Route>
-          </Route>
-          
-         
-       
+          {/* <Route path="posts" element={<Posts />}></Route> */}
+          <Route path="posts" element={<ProtectedRoute element={<Posts />} isLoggedin={props.isLoggedin} />}></Route>
+          <Route path="posts/:postId" element={<PostDetails />}></Route>
+          <Route path="login" element={<Login setIsLoggedin={props.setIsLoggedin} />}></Route>
+
+
+
+
+
           <Route path="*" element={<PageNotFound />}></Route>
 
         </Routes>
       </ErrorBoundary>
-    )
-  }
+  )
 }
 
 export default Routing
