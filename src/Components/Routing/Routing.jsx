@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 import Home from './Home';
 import ContactUs from './ContactUs';
@@ -29,7 +29,7 @@ function Routing(props) {
           {/* <Route path="posts" element={<Posts />}></Route> */}
           <Route path="posts" element={<ProtectedRoute element={<Posts />} isLoggedin={props.isLoggedin} />}></Route>
           <Route path="posts/:postId" element={<PostDetails />}></Route>
-          <Route path="login" element={<Login setIsLoggedin={props.setIsLoggedin} />}></Route>
+          <Route path="login" element={props.isLoggedin ? <Navigate to='/' /> : <Login setIsLoggedin={props.setIsLoggedin} />}></Route>
 
 
 

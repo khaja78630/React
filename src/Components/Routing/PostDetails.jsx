@@ -10,24 +10,26 @@ function PostDetails(props) {
     const [searchParams, setSearchParams] = useSearchParams();
 //console.log('search params', searchParams.get('filter'));
 const navigate = useNavigate();
+const location = useLocation();
+console.log('postdetails', location);
 
 
-    useEffect(() => {
+    // useEffect(() => {
        
-        axios.get(`https://jsonplaceholder.typicode.com/posts/${params.postId}`).then(response => {
-            setPost(response.data);
-        })
-    },[])
+    //     axios.get(`https://jsonplaceholder.typicode.com/posts/${params.postId}`).then(response => {
+    //         setPost(response.data);
+    //     })
+    // },[])
 
     return (<>
         <div>
            
-            {!post && <h4>Loading...</h4>}
+           
         </div>
-        {post && <div>ProductsDetails
+        {location?.state?.length > 0 && <div>ProductsDetails
 
-            <p>Title : {post.title}</p>
-            <p>Body : {post.body}</p>
+            <p>Title : {params?.postId && location?.state[params.postId].title}</p>
+            <p>Body : {params?.postId && location?.state[params.postId].body}</p>
        <button onClick={() => navigate('/posts')}>Back</button>
         </div>}
 

@@ -49,6 +49,33 @@ function App() {
     )
   },[])
 
+  useEffect(() => {
+    //Cookie
+    // if (document.cookie) {
+    //   const cookieArray = document.cookie.split('=');
+    //   if(cookieArray[0] === 'isLoggedin' && cookieArray[1] === 'true'){
+    //     setIsLoggedin(true);
+    //   }
+    // }
+
+    // //localstorage
+    // const isLoggedin = localStorage.getItem('isLoggedin');
+    // if(isLoggedin && isLoggedin === 'true'){
+    //   setIsLoggedin(true);
+    // }
+
+    //seesion stoarage
+
+    const loginstring = sessionStorage.getItem('login');
+    const login = JSON.parse(loginstring);
+    const currtime = new Date().getTime();
+
+    if(login && login.isLoggedin === 'true' && currtime > login.expiry){
+      setIsLoggedin(true);
+    }
+
+  }, []);
+
   return (
     <Router>
       <div>

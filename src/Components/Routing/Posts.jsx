@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, Outlet, useParams, useSearchParams } from 'react-router-dom'
+import { Link, Outlet, useLocation, useParams, useSearchParams } from 'react-router-dom'
 import axios from 'axios';
 import Button from '../Button';
 function Posts() {
@@ -7,6 +7,9 @@ function Posts() {
   const [searchParams, setSearchParams] = useSearchParams();
   const search = searchParams.get('filter');
   const [posts, setPosts] = useState([]);
+  const location = useLocation();
+
+  console.log(location);
 
   useEffect(() => {
     axios.get('https://jsonplaceholder.typicode.com/posts').then(
@@ -46,7 +49,7 @@ function Posts() {
 
   return (
     <div style={{padding : '1rem'}}>Posts
-
+User Name : {location?.state?.username}
       <button onClick={() => {
         setSearchParams({ filter: 'IdWithEven' })
         // const postscopy = [...posts];
@@ -74,7 +77,7 @@ function Posts() {
     {posts.length > 0 && 
     posts.map(post =>{
       return (
-      <Link style={{display: 'block', textDecoration: 'none', padding: '10px'}} to={{pathname : `/posts/${post.id}`}}>{post.title}</Link>)
+      <Link style={{display: 'block', textDecoration: 'none', padding: '10px'}} to={{pathname : `/posts/${post.id}` , state: {posts} } } state={posts}>{post.title}</Link>)
     })
     }
     <Outlet />
