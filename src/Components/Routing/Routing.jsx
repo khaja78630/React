@@ -11,6 +11,9 @@ import ErrorBoundary from '../ErrorBoundary';
 import PostDetails from './PostDetails';
 import ProtectedRoute from './ProtectedRoute';
 import Login from './Login';
+import Users from './Users';
+import InternalUsers from './InternalUsers';
+import ExternalUsers from './ExternalUsers';
 
 
 
@@ -29,11 +32,17 @@ function Routing(props) {
           {/* <Route path="posts" element={<Posts />}></Route> */}
           <Route path="posts" element={<ProtectedRoute element={<Posts />} isLoggedin={props.isLoggedin} />}></Route>
           <Route path="posts/:postId" element={<PostDetails />}></Route>
-          <Route path="login" element={props.isLoggedin ? <Navigate to='/' /> : <Login setIsLoggedin={props.setIsLoggedin} />}></Route>
+          {/* <Route path="login" element={props.isLoggedin ? <Navigate to='/' /> : <Login setIsLoggedin={props.setIsLoggedin} />}></Route> */}
+          <Route path="login" element={ <Login setIsLoggedin={props.setIsLoggedin} />}></Route>
 
 
 
+          <Route path='users' element={<Users />}>
+          
+          <Route path='internal' element={<InternalUsers />}></Route>
+          <Route path='external' element={<ExternalUsers />}></Route>
 
+          </Route>
 
           <Route path="*" element={<PageNotFound />}></Route>
 

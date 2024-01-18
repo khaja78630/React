@@ -22,7 +22,7 @@ import Routing from './Components/Routing/Routing';
 
 
 import { Outlet } from 'react-router-dom';
-import Counter from './Components/context/Counter';
+// import Counter from './Components/context/Counter';
 
 import A from './Components/context/A';
 import UserContext from './Components/context/UserContext';
@@ -31,6 +31,9 @@ import axios from 'axios';
 
 import B from './Components/context/A';
 import C from './Components/context/A';
+import Counter from './Components/HOC/ButtonCounter';
+import HoverCounter from './Components/HOC/HoverCounter';
+import ButtonCounter from './Components/HOC/ButtonCounter';
 
 function App() {
   // return <Stylesheet />
@@ -77,12 +80,17 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <div>
-        <Header />
-        <Routing isLoggedin={isLoggedin} setIsLoggedin={setIsLoggedin}/>
-      </div>
-    </Router>
+    <div>
+    <ButtonCounter />
+    <HoverCounter />
+    </div>
+    
+    // <Router>
+    //   <div>
+    //     <Header />
+    //     <Routing isLoggedin={isLoggedin} setIsLoggedin={setIsLoggedin}/>
+    //   </div>
+    // </Router>
     // <UserContext.Provider value={{posts: posts}}>
 
     //   <A />

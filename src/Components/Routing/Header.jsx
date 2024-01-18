@@ -11,6 +11,7 @@ export class Header extends Component {
                         <li><Link to="/about" className="nav-link">About</Link></li>
                         <li><Link to="/contactus" className="nav-link">Contact</Link></li>
                         <li><Link to="/posts" className="nav-link">Posts</Link></li>
+                        <li><Link to="/users" className="nav-link">Users</Link></li>
                     </ul>
                 </nav>
             </header>

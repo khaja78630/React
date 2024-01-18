@@ -35,7 +35,7 @@ function Login(props) {
         }
         sessionStorage.setItem('login', JSON.stringify(login));
 
-            navigate('/posts?active=true', {state: {username : user.name}})
+            navigate('/posts?token=1234567', { state: {username : user.name}})
         } else {
             // show error message for invalid username and password
             const currUser = { ...user };
