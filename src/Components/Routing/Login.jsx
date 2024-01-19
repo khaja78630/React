@@ -27,7 +27,7 @@ function Login(props) {
 
         // session storage
         const date = new Date();
-        const timems = date.getTime() + 1 * 60 * 100; //110000000
+        const timems = date.getTime() + 1 * 60 * 1000; //110000000
 
         const login =  {
             isLoggedin : true,

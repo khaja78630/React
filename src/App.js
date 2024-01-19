@@ -53,44 +53,44 @@ function App() {
   },[])
 
   useEffect(() => {
-    //Cookie
-    // if (document.cookie) {
-    //   const cookieArray = document.cookie.split('=');
-    //   if(cookieArray[0] === 'isLoggedin' && cookieArray[1] === 'true'){
-    //     setIsLoggedin(true);
-    //   }
-    // }
+  //   //Cookie
+  //   // if (document.cookie) {
+  //   //   const cookieArray = document.cookie.split('=');
+  //   //   if(cookieArray[0] === 'isLoggedin' && cookieArray[1] === 'true'){
+  //   //     setIsLoggedin(true);
+  //   //   }
+  //   // }
 
-    // //localstorage
-    // const isLoggedin = localStorage.getItem('isLoggedin');
-    // if(isLoggedin && isLoggedin === 'true'){
+  //   // //localstorage
+  //   // const isLoggedin = localStorage.getItem('isLoggedin');
+  //   // if(isLoggedin && isLoggedin === 'true'){
+  //   //   setIsLoggedin(true);
+  //   // }
+
+  //   //seesion stoarage
+
+    // const loginstring = sessionStorage.getItem('login');
+    // const login = JSON.parse(loginstring); // convert string to json object 10:51
+    // const currtime = new Date().getTime();
+
+    // if(login && login.isLoggedin === true && login.expiry > currtime){
     //   setIsLoggedin(true);
     // }
-
-    //seesion stoarage
-
-    const loginstring = sessionStorage.getItem('login');
-    const login = JSON.parse(loginstring);
-    const currtime = new Date().getTime();
-
-    if(login && login.isLoggedin === 'true' && currtime > login.expiry){
-      setIsLoggedin(true);
-    }
 
   }, []);
 
   return (
-    <div>
-    <ButtonCounter />
-    <HoverCounter />
-    </div>
+    // <div>
+    // <ButtonCounter />
+    // <HoverCounter />
+    // </div>
     
-    // <Router>
-    //   <div>
-    //     <Header />
-    //     <Routing isLoggedin={isLoggedin} setIsLoggedin={setIsLoggedin}/>
-    //   </div>
-    // </Router>
+    <Router>
+      <div>
+        <Header />
+        <Routing isLoggedin={isLoggedin} setIsLoggedin={setIsLoggedin}/>
+      </div>
+    </Router>
     // <UserContext.Provider value={{posts: posts}}>
 
     //   <A />
