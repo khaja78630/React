@@ -31,9 +31,15 @@ import axios from 'axios';
 
 import B from './Components/context/A';
 import C from './Components/context/A';
-import Counter from './Components/HOC/ButtonCounter';
-import HoverCounter from './Components/HOC/HoverCounter';
-import ButtonCounter from './Components/HOC/ButtonCounter';
+// import Counter from './Components/HOC/ButtonCounter';
+// import HoverCounter from './Components/HO/HoverCounter';
+// import ButtonCounter from './Components/HOC/ButtonCounter';
+
+//RenderProps
+import HoverCounter from './Components/RP/HoverCounter';
+import ButtonCounter from './Components/RP/ButtonCounter';
+
+import Counter from './Components/reduer/Counter';
 
 function App() {
   // return <Stylesheet />
@@ -85,18 +91,33 @@ function App() {
     // <HoverCounter />
     // </div>
     
-    <Router>
-      <div>
-        <Header />
-        <Routing isLoggedin={isLoggedin} setIsLoggedin={setIsLoggedin}/>
-      </div>
-    </Router>
+    // <Router>
+    //   <div>
+    //     <Header />
+    //     <Routing isLoggedin={isLoggedin} setIsLoggedin={setIsLoggedin}/>
+    //   </div>
+    // </Router>
     // <UserContext.Provider value={{posts: posts}}>
 
     //   <A />
     //   <B />
     //   <C />
     // </UserContext.Provider>
+
+
+    // // Render props
+    <div>
+    {/* <div>
+        <ButtonCounter />
+       <HoverCounter />
+     </div> */}
+
+    {/* // useReducer hook */}
+
+    <div>
+      <Counter />
+    </div>
+   </div>
 
   )
 
