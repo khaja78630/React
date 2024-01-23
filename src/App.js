@@ -40,6 +40,8 @@ import HoverCounter from './Components/RP/HoverCounter';
 import ButtonCounter from './Components/RP/ButtonCounter';
 
 import Counter from './Components/reduer/Counter';
+import Memo from './Components/memo/Memo';
+import UsersMemo from './Components/memo/UsersMemo';
 
 function App() {
   // return <Stylesheet />
@@ -114,9 +116,13 @@ function App() {
 
     {/* // useReducer hook */}
 
-    <div>
+    {/* <div>
       <Counter />
-    </div>
+    </div> */}
+
+    {/* use memo */}
+    {/* <Memo /> */}
+    <UsersMemo />
    </div>
 
   )
