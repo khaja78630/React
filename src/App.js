@@ -42,6 +42,8 @@ import ButtonCounter from './Components/RP/ButtonCounter';
 import Counter from './Components/reduer/Counter';
 import Memo from './Components/memo/Memo';
 import UsersMemo from './Components/memo/UsersMemo';
+import Callback from './Components/usecallback/Callback';
+import UserForm from './Components/ref/UserForm';
 
 function App() {
   // return <Stylesheet />
@@ -122,7 +124,9 @@ function App() {
 
     {/* use memo */}
     {/* <Memo /> */}
-    <UsersMemo />
+    {/* <UsersMemo /> */}
+    {/* <Callback /> */}
+    <UserForm />
    </div>
 
   )

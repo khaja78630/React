@@ -1,10 +1,16 @@
 import React from 'react'
 
 function Button(props) {
+    console.log('from Button')
     return (
         <div>
+            <button onClick={() => {
+                
+                console.log(props.inputRefUserName.curent);
 
-            <button onClick={() => props.action()}>{props.name}</button>
+                props.inputRefUserName.current.focus();
+                
+                }}>Set Focus</button>
 
         </div>
     )
