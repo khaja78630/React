@@ -49,7 +49,9 @@ import { Provider } from 'react-redux';
 
 // redux
 import store from './Components/redux/store';
-import CounterUsingRedux from './Components/redux/Counter';
+import CounterUsingRedux from './Components/redux/counter/Counter';
+import DisplayName from './Components/DisplayName';
+import Users from './Components/redux/users/Users';
 
 function App() {
   // return <Stylesheet />
@@ -135,7 +137,10 @@ function App() {
     {/* <UserForm /> */}
 
     <Provider store={store}>
-      <CounterUsingRedux />
+      {/* <CounterUsingRedux />
+      <DisplayName /> */}
+      <Users />
+      
     </Provider>
    </div>
 

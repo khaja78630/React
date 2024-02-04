@@ -26,8 +26,8 @@ function CounterUsingRedux(props) {
 
 const mapStateToProps = state => {
   return {
-    count: state.count,
-    name: state.name
+    count: state.counterReducer.count,
+    name: state.counterReducer.name
   }
 }
 

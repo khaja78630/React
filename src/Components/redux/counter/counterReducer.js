@@ -1,4 +1,4 @@
-const initialSate = { count: 0, name: 'Vinay' }
+const initialSate = { count: 0, name: 'Vinay'}
 function counterReducer(state = initialSate, action) {
 
     switch (action.type) {
@@ -18,3 +18,5 @@ export default counterReducer;
 
 //redux - connect,
 // react -redux - 
+
+// middleware - thunk
