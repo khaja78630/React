@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import addUser from './addUser';
 import deleteUser from './deleteUser';
+import userApiCall from './getUsers';
+
 
 function Users() {
     const state = useSelector((state) => {
@@ -11,6 +13,12 @@ function Users() {
 
     const [name, setName] = useState('');
     const [id, setId] = useState('')
+
+
+    useEffect(() =>{
+        dispatch(userApiCall());
+    }, []);
+
 
     return (
         <div>

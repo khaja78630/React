@@ -1,7 +1,6 @@
 const initialSate = {
     users: [
-        { name: 'Vinay', id: '2' },
-        { name: 'Sai', id: '3' },
+
     ]
 }
 function userReducer(state = initialSate, action) {
@@ -21,6 +20,10 @@ function userReducer(state = initialSate, action) {
                 //     return {
                 //         db.update()
                 //     }
+        case 'GET_USERS': 
+        return {
+            users: action.payload
+        }
         default:
             return state;
     }
