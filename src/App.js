@@ -48,10 +48,13 @@ import { Provider } from 'react-redux';
 
 
 // redux
-import store from './Components/redux/store';
+// import store from './Components/redux/store';
+import {store} from './Components/reduxSaga/store';
+
 import CounterUsingRedux from './Components/redux/counter/Counter';
 import DisplayName from './Components/DisplayName';
 import Users from './Components/redux/users/Users';
+import ProductsDetails from './Components/reduxSaga/ProductsDetails';
 
 function App() {
   // return <Stylesheet />
@@ -65,9 +68,9 @@ function App() {
   const [isLoggedin, setIsLoggedin] = useState(false);
 
   useEffect(() => {
-    axios.get('https://jsonplaceholder.typicode.com/posts').then(
-      (response) => setPosts(response.data)
-    )
+    // axios.get('https://jsonplaceholder.typicode.com/posts').then(
+    //   (response) => setPosts(response.data)
+    // )
   },[])
 
   useEffect(() => {
@@ -139,7 +142,8 @@ function App() {
     <Provider store={store}>
       {/* <CounterUsingRedux />
       <DisplayName /> */}
-      <Users />  {/* Test new feature bracnh */}
+      {/* <Users />  Test new feature bracnh */}
+      <ProductsDetails />
 
     </Provider>
    </div>
