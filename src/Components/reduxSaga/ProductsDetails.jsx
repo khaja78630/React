@@ -26,6 +26,7 @@ function ProductsDetails() {
                     <p>{product.id}</p>
                     <p>{product.category}</p>
                     <p>{product.description}</p>
+                    <p>{product.title}</p>
                     </div>
              })   
             }

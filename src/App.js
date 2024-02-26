@@ -63,14 +63,21 @@ function App() {
   // return <CSSModule />
   const user = {name : 'Vinay'};
 
-  const [posts, setPosts] = useState()
+  const [users, setUsers] = useState([]);
+
   const [count, setCount] = useState()
   const [isLoggedin, setIsLoggedin] = useState(false);
 
   useEffect(() => {
-    // axios.get('https://jsonplaceholder.typicode.com/posts').then(
-    //   (response) => setPosts(response.data)
-    // )
+    axios.get('http://localhost:3001/users').then(
+      (response) => {
+        
+        setUsers(response.data)
+      
+      }
+
+      
+          )
   },[])
 
   useEffect(() => {
@@ -143,9 +150,15 @@ function App() {
       {/* <CounterUsingRedux />
       <DisplayName /> */}
       {/* <Users />  Test new feature bracnh */}
-      <ProductsDetails />
+    
 
     </Provider>
+    {
+      users && users.length > 1 && users.map((user) =>{
+        return <p>user Name : {user.name}</p>
+      }
+      )
+    }
    </div>
 
   )

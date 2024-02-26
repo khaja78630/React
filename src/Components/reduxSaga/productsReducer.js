@@ -16,7 +16,7 @@ export const productReducer = (state = initialState, action) => {
                 isErrorOccured: true
             }
         case UPDATE_PRODUCT:
-            let products = state.products;
+            let products = [...state.products];
             for(let i=0;i<products.length;i++){
                 if(products[i].id == action.payload.productId){
                     products[i].title = action.payload.productTitle;
