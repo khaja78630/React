@@ -61,24 +61,41 @@ function App() {
   // return <InlineStyleSheet />
 
   // return <CSSModule />
-  const user = {name : 'Vinay'};
+  // const user = {name : 'Vinay'};
 
+const [user, setUser] = useState({userId: "", userName: ""})
   const [users, setUsers] = useState([]);
 
   const [count, setCount] = useState()
   const [isLoggedin, setIsLoggedin] = useState(false);
 
-  useEffect(() => {
-    axios.get('http://localhost:3001/users').then(
-      (response) => {
-        
-        setUsers(response.data)
+  // useEffect(() => {
+  //   axios.post('http://localhost:3001/users', {"name" : 'Khaja'}).then(
+  //     (response) => {
+  //       console.log(response.data)
+  //       setUsers(response.data)
       
-      }
+  //     }
 
       
-          )
-  },[])
+  //         )
+  // },[]);
+
+
+  // useEffect(() => {
+  //   axios.post('http://localhost:3001/login', {
+  //     "userId": 123,
+  //     "pasword": "Test"
+  //   }).then(
+  //     (response) => {
+  //       console.log(response.data)
+
+
+  //     }
+
+
+  //   )
+  // }, [])
 
   useEffect(() => {
   //   //Cookie
@@ -153,13 +170,34 @@ function App() {
     
 
     </Provider>
-    {
-      users && users.length > 1 && users.map((user) =>{
-        return <p>user Name : {user.name}</p>
+   <button onClick={() => {
+
+        axios.get('http://localhost:3001/users').then(response => {
+          setUsers(response.data);
+        })
+
+      }}>Get Users</button>
+      {
+        users.map((user) => {
+          return <div>
+            <p>User Id : {user.userId}</p>
+            <p>User Name : {user.userName}</p>
+          </div>
+        })
       }
-      )
-    }
-   </div>
+
+      <div>
+        <p> Enter user Name : <input type="text" value={user.userName} onChange={(e) => {setUser({...user, userName: e.target.value})}}/></p>
+        <p> Enter user Id : <input type="text" value={user.userId} onChange={(e) => {setUser({...user, userId: e.target.value})}}/></p>
+        <p><button onClick={() =>{
+
+          axios.post('http://localhost:3001/addUser', user).then(response => {
+            //setUsers(response.data);
+          })
+
+        }}>Save User</button></p>
+      </div>
+    </div>
 
   )
 
